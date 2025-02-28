@@ -228,30 +228,34 @@ button:hover {
         <header>
             <h1>Absen Juz Al-Quran Ramadhan</h1>
         </header>
+<button id="saveBtn" onclick="saveAbsence()">Simpan</button>
 
+    <!-- JavaScript di sini -->
+    <script>
         // Fungsi untuk menangani klik pada tombol Simpan
-function saveAbsence() {
-  const button = document.getElementById('saveBtn');
-  
-  // Menambahkan animasi love
-  const loveElement = document.createElement('span');
-  loveElement.classList.add('love');
-  loveElement.textContent = '❤️'; // Emoji love
-  
-  // Menambahkan love ke dalam tombol
-  button.appendChild(loveElement);
+        function saveAbsence() {
+          const button = document.getElementById('saveBtn');
+          
+          // Menambahkan animasi love
+          const loveElement = document.createElement('span');
+          loveElement.classList.add('love');
+          loveElement.textContent = '❤️'; // Emoji love
+          
+          // Menambahkan love ke dalam tombol
+          button.appendChild(loveElement);
 
-  // Ubah teks tombol menjadi centang dan beri animasi
-  button.innerHTML = '✔️ Simpan';
-  button.classList.add('checked');
-  
-  // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
-  setTimeout(() => {
-    loveElement.remove();  // Menghapus emoji love
-    button.classList.remove('checked');  // Menghapus animasi centang
-    button.innerHTML = 'Simpan';  // Mengembalikan teks tombol
-  }, 1500); // Durasi animasi (1,5 detik)
-}
+          // Ubah teks tombol menjadi centang dan beri animasi
+          button.innerHTML = '✔️ Simpan';
+          button.classList.add('checked');
+          
+          // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
+          setTimeout(() => {
+            loveElement.remove();  // Menghapus emoji love
+            button.classList.remove('checked');  // Menghapus animasi centang
+            button.innerHTML = 'Simpan';  // Mengembalikan teks tombol
+          }, 1500); // Durasi animasi (1,5 detik)
+        }
+    </script>
 
 
           <button id="saveBtn" onclick="saveAbsence()">Simpan</button>
