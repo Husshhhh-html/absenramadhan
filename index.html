@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absen Juz Al-Quran Ramadhan</title>
     <style>
+
+        /* Animasi Love */
+@keyframes love-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Tombol Simpan */
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 2px solid #4CAF50;
+  background-color: #f4f4f4;
+  color: #4CAF50;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Efek love saat diklik */
+.love {
+  font-size: 30px;
+  color: red;
+  animation: love-animation 1s ease-in-out;
+}
+
+/* Centang (✔️) */
+.checked {
+  color: green;
+  font-size: 25px;
+  animation: love-animation 0.5s ease-in-out;
+}
+
+/* Hover untuk tombol Simpan */
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+        
         /* CSS untuk tampilan website */
         body {
             font-family: Arial, sans-serif;
@@ -179,6 +228,35 @@
         <header>
             <h1>Absen Juz Al-Quran Ramadhan</h1>
         </header>
+
+        // Fungsi untuk menangani klik pada tombol Simpan
+function saveAbsence() {
+  const button = document.getElementById('saveBtn');
+  
+  // Menambahkan animasi love
+  const loveElement = document.createElement('span');
+  loveElement.classList.add('love');
+  loveElement.textContent = '❤️'; // Emoji love
+  
+  // Menambahkan love ke dalam tombol
+  button.appendChild(loveElement);
+
+  // Ubah teks tombol menjadi centang dan beri animasi
+  button.innerHTML = '✔️ Simpan';
+  button.classList.add('checked');
+  
+  // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
+  setTimeout(() => {
+    loveElement.remove();  // Menghapus emoji love
+    button.classList.remove('checked');  // Menghapus animasi centang
+    button.innerHTML = 'Simpan';  // Mengembalikan teks tombol
+  }, 1500); // Durasi animasi (1,5 detik)
+}
+
+
+          <button id="saveBtn" onclick="saveAbsence()">Simpan</button>
+
+    <script src="script.js"></script>
 
         <!-- Gambar Imut -->
         <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute Cat" class="cute-image">
