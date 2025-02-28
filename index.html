@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absen Ramadhan</title>
     <style>
+        /* Umum */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
             text-align: center;
             padding: 20px;
+            margin: 0;
         }
 
         h1 {
             color: #ff6f61;
             font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
         table {
@@ -24,6 +27,7 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
         }
 
         th, td {
@@ -65,13 +69,52 @@
             100% { transform: translateY(0); }
         }
 
-        /* Kucing 3D - Bisa diganti dengan gambar atau model 3D lainnya */
+        /* Kucing 3D */
         .kucing img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
         }
 
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+                overflow-x: scroll;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .kucing img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            table {
+                font-size: 10px;
+            }
+
+            td {
+                padding: 6px;
+            }
+
+            .kucing img {
+                width: 60px;
+                height: 60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,186 +157,201 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Tabel untuk setiap orang -->
+            <!-- Baris data absen Lala -->
             <tr>
                 <td>Lala</td>
-                <td onclick="toggleCheck(0, 'Lala')"></td>
-                <td onclick="toggleCheck(1, 'Lala')"></td>
-                <td onclick="toggleCheck(2, 'Lala')"></td>
-                <td onclick="toggleCheck(3, 'Lala')"></td>
-                <td onclick="toggleCheck(4, 'Lala')"></td>
-                <td onclick="toggleCheck(5, 'Lala')"></td>
-                <td onclick="toggleCheck(6, 'Lala')"></td>
-                <td onclick="toggleCheck(7, 'Lala')"></td>
-                <td onclick="toggleCheck(8, 'Lala')"></td>
-                <td onclick="toggleCheck(9, 'Lala')"></td>
-                <td onclick="toggleCheck(10, 'Lala')"></td>
-                <td onclick="toggleCheck(11, 'Lala')"></td>
-                <td onclick="toggleCheck(12, 'Lala')"></td>
-                <td onclick="toggleCheck(13, 'Lala')"></td>
-                <td onclick="toggleCheck(14, 'Lala')"></td>
-                <td onclick="toggleCheck(15, 'Lala')"></td>
-                <td onclick="toggleCheck(16, 'Lala')"></td>
-                <td onclick="toggleCheck(17, 'Lala')"></td>
-                <td onclick="toggleCheck(18, 'Lala')"></td>
-                <td onclick="toggleCheck(19, 'Lala')"></td>
-                <td onclick="toggleCheck(20, 'Lala')"></td>
-                <td onclick="toggleCheck(21, 'Lala')"></td>
-                <td onclick="toggleCheck(22, 'Lala')"></td>
-                <td onclick="toggleCheck(23, 'Lala')"></td>
-                <td onclick="toggleCheck(24, 'Lala')"></td>
-                <td onclick="toggleCheck(25, 'Lala')"></td>
-                <td onclick="toggleCheck(26, 'Lala')"></td>
-                <td onclick="toggleCheck(27, 'Lala')"></td>
-                <td onclick="toggleCheck(28, 'Lala')"></td>
-                <td onclick="toggleCheck(29, 'Lala')"></td>
+                <td><input type="checkbox" id="Lala-0"></td>
+                <td><input type="checkbox" id="Lala-1"></td>
+                <td><input type="checkbox" id="Lala-2"></td>
+                <td><input type="checkbox" id="Lala-3"></td>
+                <td><input type="checkbox" id="Lala-4"></td>
+                <td><input type="checkbox" id="Lala-5"></td>
+                <td><input type="checkbox" id="Lala-6"></td>
+                <td><input type="checkbox" id="Lala-7"></td>
+                <td><input type="checkbox" id="Lala-8"></td>
+                <td><input type="checkbox" id="Lala-9"></td>
+                <td><input type="checkbox" id="Lala-10"></td>
+                <td><input type="checkbox" id="Lala-11"></td>
+                <td><input type="checkbox" id="Lala-12"></td>
+                <td><input type="checkbox" id="Lala-13"></td>
+                <td><input type="checkbox" id="Lala-14"></td>
+                <td><input type="checkbox" id="Lala-15"></td>
+                <td><input type="checkbox" id="Lala-16"></td>
+                <td><input type="checkbox" id="Lala-17"></td>
+                <td><input type="checkbox" id="Lala-18"></td>
+                <td><input type="checkbox" id="Lala-19"></td>
+                <td><input type="checkbox" id="Lala-20"></td>
+                <td><input type="checkbox" id="Lala-21"></td>
+                <td><input type="checkbox" id="Lala-22"></td>
+                <td><input type="checkbox" id="Lala-23"></td>
+                <td><input type="checkbox" id="Lala-24"></td>
+                <td><input type="checkbox" id="Lala-25"></td>
+                <td><input type="checkbox" id="Lala-26"></td>
+                <td><input type="checkbox" id="Lala-27"></td>
+                <td><input type="checkbox" id="Lala-28"></td>
+                <td><input type="checkbox" id="Lala-29"></td>
             </tr>
+
+            <!-- Baris data absen Valenskuy -->
             <tr>
                 <td>Valenskuy</td>
-                <td onclick="toggleCheck(0, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(1, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(2, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(3, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(4, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(5, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(6, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(7, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(8, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(9, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(10, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(11, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(12, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(13, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(14, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(15, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(16, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(17, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(18, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(19, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(20, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(21, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(22, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(23, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(24, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(25, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(26, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(27, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(28, 'Valenskuy')"></td>
-                <td onclick="toggleCheck(29, 'Valenskuy')"></td>
+                <td><input type="checkbox" id="Valenskuy-0"></td>
+                <td><input type="checkbox" id="Valenskuy-1"></td>
+                <td><input type="checkbox" id="Valenskuy-2"></td>
+                <td><input type="checkbox" id="Valenskuy-3"></td>
+                <td><input type="checkbox" id="Valenskuy-4"></td>
+                <td><input type="checkbox" id="Valenskuy-5"></td>
+                <td><input type="checkbox" id="Valenskuy-6"></td>
+                <td><input type="checkbox" id="Valenskuy-7"></td>
+                <td><input type="checkbox" id="Valenskuy-8"></td>
+                <td><input type="checkbox" id="Valenskuy-9"></td>
+                <td><input type="checkbox" id="Valenskuy-10"></td>
+                <td><input type="checkbox" id="Valenskuy-11"></td>
+                <td><input type="checkbox" id="Valenskuy-12"></td>
+                <td><input type="checkbox" id="Valenskuy-13"></td>
+                <td><input type="checkbox" id="Valenskuy-14"></td>
+                <td><input type="checkbox" id="Valenskuy-15"></td>
+                <td><input type="checkbox" id="Valenskuy-16"></td>
+                <td><input type="checkbox" id="Valenskuy-17"></td>
+                <td><input type="checkbox" id="Valenskuy-18"></td>
+                <td><input type="checkbox" id="Valenskuy-19"></td>
+                <td><input type="checkbox" id="Valenskuy-20"></td>
+                <td><input type="checkbox" id="Valenskuy-21"></td>
+                <td><input type="checkbox" id="Valenskuy-22"></td>
+                <td><input type="checkbox" id="Valenskuy-23"></td>
+                <td><input type="checkbox" id="Valenskuy-24"></td>
+                <td><input type="checkbox" id="Valenskuy-25"></td>
+                <td><input type="checkbox" id="Valenskuy-26"></td>
+                <td><input type="checkbox" id="Valenskuy-27"></td>
+                <td><input type="checkbox" id="Valenskuy-28"></td>
+                <td><input type="checkbox" id="Valenskuy-29"></td>
             </tr>
+
+            <!-- Baris data absen Firskuy -->
             <tr>
                 <td>Firskuy</td>
-                <td onclick="toggleCheck(0, 'Firskuy')"></td>
-                <td onclick="toggleCheck(1, 'Firskuy')"></td>
-                <td onclick="toggleCheck(2, 'Firskuy')"></td>
-                <td onclick="toggleCheck(3, 'Firskuy')"></td>
-                <td onclick="toggleCheck(4, 'Firskuy')"></td>
-                <td onclick="toggleCheck(5, 'Firskuy')"></td>
-                <td onclick="toggleCheck(6, 'Firskuy')"></td>
-                <td onclick="toggleCheck(7, 'Firskuy')"></td>
-                <td onclick="toggleCheck(8, 'Firskuy')"></td>
-                <td onclick="toggleCheck(9, 'Firskuy')"></td>
-                <td onclick="toggleCheck(10, 'Firskuy')"></td>
-                <td onclick="toggleCheck(11, 'Firskuy')"></td>
-                <td onclick="toggleCheck(12, 'Firskuy')"></td>
-                <td onclick="toggleCheck(13, 'Firskuy')"></td>
-                <td onclick="toggleCheck(14, 'Firskuy')"></td>
-                <td onclick="toggleCheck(15, 'Firskuy')"></td>
-                <td onclick="toggleCheck(16, 'Firskuy')"></td>
-                <td onclick="toggleCheck(17, 'Firskuy')"></td>
-                <td onclick="toggleCheck(18, 'Firskuy')"></td>
-                <td onclick="toggleCheck(19, 'Firskuy')"></td>
-                <td onclick="toggleCheck(20, 'Firskuy')"></td>
-                <td onclick="toggleCheck(21, 'Firskuy')"></td>
-                <td onclick="toggleCheck(22, 'Firskuy')"></td>
-                <td onclick="toggleCheck(23, 'Firskuy')"></td>
-                <td onclick="toggleCheck(24, 'Firskuy')"></td>
-                <td onclick="toggleCheck(25, 'Firskuy')"></td>
-                <td onclick="toggleCheck(26, 'Firskuy')"></td>
-                <td onclick="toggleCheck(27, 'Firskuy')"></td>
-                <td onclick="toggleCheck(28, 'Firskuy')"></td>
-                <td onclick="toggleCheck(29, 'Firskuy')"></td>
+                <td><input type="checkbox" id="Firskuy-0"></td>
+                <td><input type="checkbox" id="Firskuy-1"></td>
+                <td><input type="checkbox" id="Firskuy-2"></td>
+                <td><input type="checkbox" id="Firskuy-3"></td>
+                <td><input type="checkbox" id="Firskuy-4"></td>
+                <td><input type="checkbox" id="Firskuy-5"></td>
+                <td><input type="checkbox" id="Firskuy-6"></td>
+                <td><input type="checkbox" id="Firskuy-7"></td>
+                <td><input type="checkbox" id="Firskuy-8"></td>
+                <td><input type="checkbox" id="Firskuy-9"></td>
+                <td><input type="checkbox" id="Firskuy-10"></td>
+                <td><input type="checkbox" id="Firskuy-11"></td>
+                <td><input type="checkbox" id="Firskuy-12"></td>
+                <td><input type="checkbox" id="Firskuy-13"></td>
+                <td><input type="checkbox" id="Firskuy-14"></td>
+                <td><input type="checkbox" id="Firskuy-15"></td>
+                <td><input type="checkbox" id="Firskuy-16"></td>
+                <td><input type="checkbox" id="Firskuy-17"></td>
+                <td><input type="checkbox" id="Firskuy-18"></td>
+                <td><input type="checkbox" id="Firskuy-19"></td>
+                <td><input type="checkbox" id="Firskuy-20"></td>
+                <td><input type="checkbox" id="Firskuy-21"></td>
+                <td><input type="checkbox" id="Firskuy-22"></td>
+                <td><input type="checkbox" id="Firskuy-23"></td>
+                <td><input type="checkbox" id="Firskuy-24"></td>
+                <td><input type="checkbox" id="Firskuy-25"></td>
+                <td><input type="checkbox" id="Firskuy-26"></td>
+                <td><input type="checkbox" id="Firskuy-27"></td>
+                <td><input type="checkbox" id="Firskuy-28"></td>
+                <td><input type="checkbox" id="Firskuy-29"></td>
             </tr>
+
+            <!-- Baris data absen SadidGTG -->
             <tr>
                 <td>SadidGTG</td>
-                <td onclick="toggleCheck(0, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(1, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(2, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(3, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(4, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(5, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(6, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(7, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(8, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(9, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(10, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(11, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(12, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(13, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(14, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(15, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(16, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(17, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(18, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(19, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(20, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(21, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(22, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(23, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(24, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(25, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(26, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(27, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(28, 'SadidGTG')"></td>
-                <td onclick="toggleCheck(29, 'SadidGTG')"></td>
+                <td><input type="checkbox" id="SadidGTG-0"></td>
+                <td><input type="checkbox" id="SadidGTG-1"></td>
+                <td><input type="checkbox" id="SadidGTG-2"></td>
+                <td><input type="checkbox" id="SadidGTG-3"></td>
+                <td><input type="checkbox" id="SadidGTG-4"></td>
+                <td><input type="checkbox" id="SadidGTG-5"></td>
+                <td><input type="checkbox" id="SadidGTG-6"></td>
+                <td><input type="checkbox" id="SadidGTG-7"></td>
+                <td><input type="checkbox" id="SadidGTG-8"></td>
+                <td><input type="checkbox" id="SadidGTG-9"></td>
+                <td><input type="checkbox" id="SadidGTG-10"></td>
+                <td><input type="checkbox" id="SadidGTG-11"></td>
+                <td><input type="checkbox" id="SadidGTG-12"></td>
+                <td><input type="checkbox" id="SadidGTG-13"></td>
+                <td><input type="checkbox" id="SadidGTG-14"></td>
+                <td><input type="checkbox" id="SadidGTG-15"></td>
+                <td><input type="checkbox" id="SadidGTG-16"></td>
+                <td><input type="checkbox" id="SadidGTG-17"></td>
+                <td><input type="checkbox" id="SadidGTG-18"></td>
+                <td><input type="checkbox" id="SadidGTG-19"></td>
+                <td><input type="checkbox" id="SadidGTG-20"></td>
+                <td><input type="checkbox" id="SadidGTG-21"></td>
+                <td><input type="checkbox" id="SadidGTG-22"></td>
+                <td><input type="checkbox" id="SadidGTG-23"></td>
+                <td><input type="checkbox" id="SadidGTG-24"></td>
+                <td><input type="checkbox" id="SadidGTG-25"></td>
+                <td><input type="checkbox" id="SadidGTG-26"></td>
+                <td><input type="checkbox" id="SadidGTG-27"></td>
+                <td><input type="checkbox" id="SadidGTG-28"></td>
+                <td><input type="checkbox" id="SadidGTG-29"></td>
             </tr>
+
+            <!-- Baris data absen Rizqi -->
             <tr>
                 <td>Rizqi</td>
-                <td onclick="toggleCheck(0, 'Rizqi')"></td>
-                <td onclick="toggleCheck(1, 'Rizqi')"></td>
-                <td onclick="toggleCheck(2, 'Rizqi')"></td>
-                <td onclick="toggleCheck(3, 'Rizqi')"></td>
-                <td onclick="toggleCheck(4, 'Rizqi')"></td>
-                <td onclick="toggleCheck(5, 'Rizqi')"></td>
-                <td onclick="toggleCheck(6, 'Rizqi')"></td>
-                <td onclick="toggleCheck(7, 'Rizqi')"></td>
-                <td onclick="toggleCheck(8, 'Rizqi')"></td>
-                <td onclick="toggleCheck(9, 'Rizqi')"></td>
-                <td onclick="toggleCheck(10, 'Rizqi')"></td>
-                <td onclick="toggleCheck(11, 'Rizqi')"></td>
-                <td onclick="toggleCheck(12, 'Rizqi')"></td>
-                <td onclick="toggleCheck(13, 'Rizqi')"></td>
-                <td onclick="toggleCheck(14, 'Rizqi')"></td>
-                <td onclick="toggleCheck(15, 'Rizqi')"></td>
-                <td onclick="toggleCheck(16, 'Rizqi')"></td>
-                <td onclick="toggleCheck(17, 'Rizqi')"></td>
-                <td onclick="toggleCheck(18, 'Rizqi')"></td>
-                <td onclick="toggleCheck(19, 'Rizqi')"></td>
-                <td onclick="toggleCheck(20, 'Rizqi')"></td>
-                <td onclick="toggleCheck(21, 'Rizqi')"></td>
-                <td onclick="toggleCheck(22, 'Rizqi')"></td>
-                <td onclick="toggleCheck(23, 'Rizqi')"></td>
-                <td onclick="toggleCheck(24, 'Rizqi')"></td>
-                <td onclick="toggleCheck(25, 'Rizqi')"></td>
-                <td onclick="toggleCheck(26, 'Rizqi')"></td>
-                <td onclick="toggleCheck(27, 'Rizqi')"></td>
-                <td onclick="toggleCheck(28, 'Rizqi')"></td>
-                <td onclick="toggleCheck(29, 'Rizqi')"></td>
+                <td><input type="checkbox" id="Rizqi-0"></td>
+                <td><input type="checkbox" id="Rizqi-1"></td>
+                <td><input type="checkbox" id="Rizqi-2"></td>
+                <td><input type="checkbox" id="Rizqi-3"></td>
+                <td><input type="checkbox" id="Rizqi-4"></td>
+                <td><input type="checkbox" id="Rizqi-5"></td>
+                <td><input type="checkbox" id="Rizqi-6"></td>
+                <td><input type="checkbox" id="Rizqi-7"></td>
+                <td><input type="checkbox" id="Rizqi-8"></td>
+                <td><input type="checkbox" id="Rizqi-9"></td>
+                <td><input type="checkbox" id="Rizqi-10"></td>
+                <td><input type="checkbox" id="Rizqi-11"></td>
+                <td><input type="checkbox" id="Rizqi-12"></td>
+                <td><input type="checkbox" id="Rizqi-13"></td>
+                <td><input type="checkbox" id="Rizqi-14"></td>
+                <td><input type="checkbox" id="Rizqi-15"></td>
+                <td><input type="checkbox" id="Rizqi-16"></td>
+                <td><input type="checkbox" id="Rizqi-17"></td>
+                <td><input type="checkbox" id="Rizqi-18"></td>
+                <td><input type="checkbox" id="Rizqi-19"></td>
+                <td><input type="checkbox" id="Rizqi-20"></td>
+                <td><input type="checkbox" id="Rizqi-21"></td>
+                <td><input type="checkbox" id="Rizqi-22"></td>
+                <td><input type="checkbox" id="Rizqi-23"></td>
+                <td><input type="checkbox" id="Rizqi-24"></td>
+                <td><input type="checkbox" id="Rizqi-25"></td>
+                <td><input type="checkbox" id="Rizqi-26"></td>
+                <td><input type="checkbox" id="Rizqi-27"></td>
+                <td><input type="checkbox" id="Rizqi-28"></td>
+                <td><input type="checkbox" id="Rizqi-29"></td>
             </tr>
         </tbody>
     </table>
 
-    <!-- Gambar Kucing -->
+    <!-- Gambar Kucing Animasi -->
     <div class="kucing">
-        <img src="https://placekitten.com/100/100" alt="Kucing Lucu">
+        <img src="https://www.example.com/lucu-kucing.gif" alt="Kucing Lucu">
     </div>
 
     <script>
-        // Fungsi untuk toggle checkbox
-        function toggleCheck(juz, nama) {
-            const cell = document.getElementById(nama + '-cell-' + juz);
-            cell.classList.toggle('checked');
-        }
+        // Skrip untuk menandai checkbox dan merubah background ketika diklik
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', () => {
+                const row = checkbox.closest('tr');
+                if (checkbox.checked) {
+                    row.classList.add('checked');
+                } else {
+                    row.classList.remove('checked');
+                }
+            });
+        });
     </script>
 </body>
 </html>
