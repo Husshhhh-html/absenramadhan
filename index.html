@@ -236,44 +236,35 @@ button:hover {
         function saveAbsence() {
             const button = document.getElementById('saveBtn');
             
-            // Cek apakah status tombol sudah disimpan sebelumnya
-            const savedStatus = localStorage.getItem('buttonStatus');
+            // Menambahkan animasi love
+            const loveElement = document.createElement('span');
+            loveElement.classList.add('love');
+            loveElement.textContent = '❤️'; // Emoji love
             
-            if (savedStatus === 'saved') {
-                // Jika tombol sudah disimpan, tampilkan centang dan simpan animasi
-                button.innerHTML = '✔️ Simpan';
-                button.classList.add('checked');
-            } else {
-                // Menambahkan animasi love
-                const loveElement = document.createElement('span');
-                loveElement.classList.add('love');
-                loveElement.textContent = '❤️'; // Emoji love
-                
-                // Menambahkan love ke dalam tombol
-                button.appendChild(loveElement);
+            // Menambahkan love ke dalam tombol
+            button.appendChild(loveElement);
 
-                // Menambahkan centang tanpa menghapus love
-                const checkMark = document.createElement('span');
-                checkMark.textContent = '✔️'; // Centang
+            // Menambahkan centang tanpa menghapus love
+            const checkMark = document.createElement('span');
+            checkMark.textContent = '✔️'; // Centang
 
-                // Ubah tombol menjadi centang dan beri animasi
-                button.innerHTML = '';  // Hapus isi sebelumnya
-                button.appendChild(checkMark);  // Menambahkan centang ke tombol
-                button.classList.add('checked');  // Menambahkan class untuk animasi centang
-                
-                // Menambahkan love kembali ke dalam tombol setelah centang
-                button.appendChild(loveElement); // Menambahkan kembali love ke tombol
+            // Ubah tombol menjadi centang dan beri animasi
+            button.innerHTML = '';  // Hapus isi sebelumnya
+            button.appendChild(checkMark);  // Menambahkan centang ke tombol
+            button.classList.add('checked');  // Menambahkan class untuk animasi centang
+            
+            // Menambahkan love kembali ke dalam tombol setelah centang
+            button.appendChild(loveElement); // Menambahkan kembali love ke tombol
 
-                // Simpan status tombol sebagai "saved"
-                localStorage.setItem('buttonStatus', 'saved');
+            // Simpan status tombol sebagai "saved"
+            localStorage.setItem('buttonStatus', 'saved');
 
-                // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
-                setTimeout(() => {
-                    button.classList.remove('checked');  // Menghapus animasi centang
-                    button.innerHTML = '';  // Menghapus centang dan love sementara
-                    button.innerHTML = 'Simpan';  // Kembalikan teks tombol ke "Simpan"
-                }, 1500); // Durasi animasi (1,5 detik)
-            }
+            // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
+            setTimeout(() => {
+                button.classList.remove('checked');  // Menghapus animasi centang
+                button.innerHTML = '';  // Menghapus centang dan love sementara
+                button.innerHTML = 'Simpan';  // Kembalikan teks tombol ke "Simpan"
+            }, 1500); // Durasi animasi (1,5 detik)
         }
 
         // Cek status tombol saat halaman dimuat
