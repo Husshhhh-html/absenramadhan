@@ -1,513 +1,298 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Absen Juz Al-Quran Ramadhan</title>
+    <title>Absen Ramadhan</title>
     <style>
-
-        /* Animasi Love */
-@keyframes love-animation {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Tombol Simpan */
-button {
-  font-size: 20px;
-  padding: 10px 20px;
-  border: 2px solid #4CAF50;
-  background-color: #f4f4f4;
-  color: #4CAF50;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-/* Efek love saat diklik */
-.love {
-  font-size: 30px;
-  color: red;
-  animation: love-animation 1s ease-in-out;
-}
-
-/* Centang (✔️) */
-.checked {
-  color: green;
-  font-size: 25px;
-  animation: love-animation 0.5s ease-in-out;
-}
-
-/* Hover untuk tombol Simpan */
-button:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-        
-        /* CSS untuk tampilan website */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        header {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
             text-align: center;
-            margin-bottom: 20px;
+            padding: 20px;
         }
 
-        header h1 {
-            font-size: 2.5em;
-            color: #6A4CFF;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        h1 {
+            color: #ff6f61;
+            font-size: 2.5rem;
         }
 
-        /* Menambahkan scroll horizontal untuk tabel */
-        .table-container {
-            max-width: 100%;
-            overflow-x: auto;
-        }
-
-        .absen-table {
+        table {
             width: 100%;
             margin-top: 20px;
             border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .absen-table th, .absen-table td {
-            padding: 10px;
+        th, td {
+            padding: 12px;
             text-align: center;
             border: 1px solid #ddd;
-            font-size: 14px;
         }
 
-        .absen-table th {
-            background-color: #6A4CFF;
+        th {
+            background-color: #ff6f61;
             color: white;
         }
 
-        .absen-table td {
+        td {
             background-color: #fafafa;
-        }
-
-        .absen-table td input {
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .absen-table tr:nth-child(even) {
-            background-color: #f1f1f1;
-        }
-
-        .absen-table tr:hover {
-            background-color: #e3e3e3;
-        }
-
-        .absen-table td input[type="checkbox"] {
-            transform: scale(1.5);
-        }
-
-        /* Animasi Love */
-        .heart-animation {
-            animation: heart 1s infinite;
-        }
-
-        @keyframes heart {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.6;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .save-button {
-            background-color: #FF8C00;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
-            display: block;
-            margin: 20px auto;
-            transition: 0.3s;
+            transition: background-color 0.3s;
         }
 
-        .save-button:hover {
-            background-color: #ff6700;
-            transform: scale(1.05);
+        td:hover {
+            background-color: #f0a7a0;
         }
 
-        /* Animasi Kucing Imut */
-        .cat-animation {
-            position: absolute;
+        .checked {
+            background-color: #c8e6c9;
+        }
+
+        .kucing {
+            position: fixed;
             bottom: 10px;
-            left: 10px;
-            animation: moveCat 5s infinite;
+            right: 10px;
+            animation: meow 3s infinite;
+            z-index: 1000;
         }
 
-        @keyframes moveCat {
-            0% {
-                bottom: 10px;
-                left: 10px;
-            }
-            50% {
-                bottom: 50px;
-                left: 50px;
-            }
-            100% {
-                bottom: 10px;
-                left: 10px;
-            }
+        @keyframes meow {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
 
-        /* Gambar Imut di samping */
-        .cute-image {
+        /* Kucing 3D - Bisa diganti dengan gambar atau model 3D lainnya */
+        .kucing img {
             width: 100px;
-            margin-top: 20px;
-            margin-left: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            height: 100px;
+            border-radius: 50%;
         }
 
-        /* Responsif untuk tampilan mobile */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .absen-table th, .absen-table td {
-                font-size: 12px;
-            }
-
-            .save-button {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Absen Juz Al-Quran Ramadhan</h1>
-        </header>
-<button id="saveBtn" onclick="saveAbsence()">Simpan</button>
+    <h1>Absen Juz Ramadhan</h1>
 
-    <!-- JavaScript di sini -->
-    <script>
-        // Fungsi untuk menangani klik pada tombol Simpan
-        function saveAbsence() {
-            const button = document.getElementById('saveBtn');
-            
-            // Menambahkan animasi love
-            const loveElement = document.createElement('span');
-            loveElement.classList.add('love');
-            loveElement.textContent = '❤️'; // Emoji love
-            
-            // Menambahkan love ke dalam tombol
-            button.appendChild(loveElement);
+    <table id="absenTable">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Juz 1</th>
+                <th>Juz 2</th>
+                <th>Juz 3</th>
+                <th>Juz 4</th>
+                <th>Juz 5</th>
+                <th>Juz 6</th>
+                <th>Juz 7</th>
+                <th>Juz 8</th>
+                <th>Juz 9</th>
+                <th>Juz 10</th>
+                <th>Juz 11</th>
+                <th>Juz 12</th>
+                <th>Juz 13</th>
+                <th>Juz 14</th>
+                <th>Juz 15</th>
+                <th>Juz 16</th>
+                <th>Juz 17</th>
+                <th>Juz 18</th>
+                <th>Juz 19</th>
+                <th>Juz 20</th>
+                <th>Juz 21</th>
+                <th>Juz 22</th>
+                <th>Juz 23</th>
+                <th>Juz 24</th>
+                <th>Juz 25</th>
+                <th>Juz 26</th>
+                <th>Juz 27</th>
+                <th>Juz 28</th>
+                <th>Juz 29</th>
+                <th>Juz 30</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tabel untuk setiap orang -->
+            <tr>
+                <td>Lala</td>
+                <td onclick="toggleCheck(0, 'Lala')"></td>
+                <td onclick="toggleCheck(1, 'Lala')"></td>
+                <td onclick="toggleCheck(2, 'Lala')"></td>
+                <td onclick="toggleCheck(3, 'Lala')"></td>
+                <td onclick="toggleCheck(4, 'Lala')"></td>
+                <td onclick="toggleCheck(5, 'Lala')"></td>
+                <td onclick="toggleCheck(6, 'Lala')"></td>
+                <td onclick="toggleCheck(7, 'Lala')"></td>
+                <td onclick="toggleCheck(8, 'Lala')"></td>
+                <td onclick="toggleCheck(9, 'Lala')"></td>
+                <td onclick="toggleCheck(10, 'Lala')"></td>
+                <td onclick="toggleCheck(11, 'Lala')"></td>
+                <td onclick="toggleCheck(12, 'Lala')"></td>
+                <td onclick="toggleCheck(13, 'Lala')"></td>
+                <td onclick="toggleCheck(14, 'Lala')"></td>
+                <td onclick="toggleCheck(15, 'Lala')"></td>
+                <td onclick="toggleCheck(16, 'Lala')"></td>
+                <td onclick="toggleCheck(17, 'Lala')"></td>
+                <td onclick="toggleCheck(18, 'Lala')"></td>
+                <td onclick="toggleCheck(19, 'Lala')"></td>
+                <td onclick="toggleCheck(20, 'Lala')"></td>
+                <td onclick="toggleCheck(21, 'Lala')"></td>
+                <td onclick="toggleCheck(22, 'Lala')"></td>
+                <td onclick="toggleCheck(23, 'Lala')"></td>
+                <td onclick="toggleCheck(24, 'Lala')"></td>
+                <td onclick="toggleCheck(25, 'Lala')"></td>
+                <td onclick="toggleCheck(26, 'Lala')"></td>
+                <td onclick="toggleCheck(27, 'Lala')"></td>
+                <td onclick="toggleCheck(28, 'Lala')"></td>
+                <td onclick="toggleCheck(29, 'Lala')"></td>
+            </tr>
+            <tr>
+                <td>Valenskuy</td>
+                <td onclick="toggleCheck(0, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(1, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(2, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(3, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(4, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(5, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(6, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(7, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(8, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(9, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(10, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(11, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(12, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(13, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(14, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(15, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(16, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(17, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(18, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(19, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(20, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(21, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(22, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(23, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(24, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(25, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(26, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(27, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(28, 'Valenskuy')"></td>
+                <td onclick="toggleCheck(29, 'Valenskuy')"></td>
+            </tr>
+            <tr>
+                <td>Firskuy</td>
+                <td onclick="toggleCheck(0, 'Firskuy')"></td>
+                <td onclick="toggleCheck(1, 'Firskuy')"></td>
+                <td onclick="toggleCheck(2, 'Firskuy')"></td>
+                <td onclick="toggleCheck(3, 'Firskuy')"></td>
+                <td onclick="toggleCheck(4, 'Firskuy')"></td>
+                <td onclick="toggleCheck(5, 'Firskuy')"></td>
+                <td onclick="toggleCheck(6, 'Firskuy')"></td>
+                <td onclick="toggleCheck(7, 'Firskuy')"></td>
+                <td onclick="toggleCheck(8, 'Firskuy')"></td>
+                <td onclick="toggleCheck(9, 'Firskuy')"></td>
+                <td onclick="toggleCheck(10, 'Firskuy')"></td>
+                <td onclick="toggleCheck(11, 'Firskuy')"></td>
+                <td onclick="toggleCheck(12, 'Firskuy')"></td>
+                <td onclick="toggleCheck(13, 'Firskuy')"></td>
+                <td onclick="toggleCheck(14, 'Firskuy')"></td>
+                <td onclick="toggleCheck(15, 'Firskuy')"></td>
+                <td onclick="toggleCheck(16, 'Firskuy')"></td>
+                <td onclick="toggleCheck(17, 'Firskuy')"></td>
+                <td onclick="toggleCheck(18, 'Firskuy')"></td>
+                <td onclick="toggleCheck(19, 'Firskuy')"></td>
+                <td onclick="toggleCheck(20, 'Firskuy')"></td>
+                <td onclick="toggleCheck(21, 'Firskuy')"></td>
+                <td onclick="toggleCheck(22, 'Firskuy')"></td>
+                <td onclick="toggleCheck(23, 'Firskuy')"></td>
+                <td onclick="toggleCheck(24, 'Firskuy')"></td>
+                <td onclick="toggleCheck(25, 'Firskuy')"></td>
+                <td onclick="toggleCheck(26, 'Firskuy')"></td>
+                <td onclick="toggleCheck(27, 'Firskuy')"></td>
+                <td onclick="toggleCheck(28, 'Firskuy')"></td>
+                <td onclick="toggleCheck(29, 'Firskuy')"></td>
+            </tr>
+            <tr>
+                <td>SadidGTG</td>
+                <td onclick="toggleCheck(0, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(1, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(2, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(3, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(4, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(5, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(6, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(7, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(8, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(9, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(10, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(11, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(12, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(13, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(14, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(15, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(16, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(17, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(18, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(19, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(20, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(21, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(22, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(23, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(24, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(25, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(26, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(27, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(28, 'SadidGTG')"></td>
+                <td onclick="toggleCheck(29, 'SadidGTG')"></td>
+            </tr>
+            <tr>
+                <td>Rizqi</td>
+                <td onclick="toggleCheck(0, 'Rizqi')"></td>
+                <td onclick="toggleCheck(1, 'Rizqi')"></td>
+                <td onclick="toggleCheck(2, 'Rizqi')"></td>
+                <td onclick="toggleCheck(3, 'Rizqi')"></td>
+                <td onclick="toggleCheck(4, 'Rizqi')"></td>
+                <td onclick="toggleCheck(5, 'Rizqi')"></td>
+                <td onclick="toggleCheck(6, 'Rizqi')"></td>
+                <td onclick="toggleCheck(7, 'Rizqi')"></td>
+                <td onclick="toggleCheck(8, 'Rizqi')"></td>
+                <td onclick="toggleCheck(9, 'Rizqi')"></td>
+                <td onclick="toggleCheck(10, 'Rizqi')"></td>
+                <td onclick="toggleCheck(11, 'Rizqi')"></td>
+                <td onclick="toggleCheck(12, 'Rizqi')"></td>
+                <td onclick="toggleCheck(13, 'Rizqi')"></td>
+                <td onclick="toggleCheck(14, 'Rizqi')"></td>
+                <td onclick="toggleCheck(15, 'Rizqi')"></td>
+                <td onclick="toggleCheck(16, 'Rizqi')"></td>
+                <td onclick="toggleCheck(17, 'Rizqi')"></td>
+                <td onclick="toggleCheck(18, 'Rizqi')"></td>
+                <td onclick="toggleCheck(19, 'Rizqi')"></td>
+                <td onclick="toggleCheck(20, 'Rizqi')"></td>
+                <td onclick="toggleCheck(21, 'Rizqi')"></td>
+                <td onclick="toggleCheck(22, 'Rizqi')"></td>
+                <td onclick="toggleCheck(23, 'Rizqi')"></td>
+                <td onclick="toggleCheck(24, 'Rizqi')"></td>
+                <td onclick="toggleCheck(25, 'Rizqi')"></td>
+                <td onclick="toggleCheck(26, 'Rizqi')"></td>
+                <td onclick="toggleCheck(27, 'Rizqi')"></td>
+                <td onclick="toggleCheck(28, 'Rizqi')"></td>
+                <td onclick="toggleCheck(29, 'Rizqi')"></td>
+            </tr>
+        </tbody>
+    </table>
 
-            // Menambahkan centang tanpa menghapus love
-            const checkMark = document.createElement('span');
-            checkMark.textContent = '✔️'; // Centang
-
-            // Ubah tombol menjadi centang dan beri animasi
-            button.innerHTML = '';  // Hapus isi sebelumnya
-            button.appendChild(checkMark);  // Menambahkan centang ke tombol
-            button.classList.add('checked');  // Menambahkan class untuk animasi centang
-            
-            // Menambahkan love kembali ke dalam tombol setelah centang
-            button.appendChild(loveElement); // Menambahkan kembali love ke tombol
-
-            // Simpan status tombol sebagai "saved"
-            localStorage.setItem('buttonStatus', 'saved');
-
-            // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
-            setTimeout(() => {
-                button.classList.remove('checked');  // Menghapus animasi centang
-                button.innerHTML = '';  // Menghapus centang dan love sementara
-                button.innerHTML = 'Simpan';  // Kembalikan teks tombol ke "Simpan"
-            }, 1500); // Durasi animasi (1,5 detik)
-        }
-
-        // Cek status tombol saat halaman dimuat
-        window.onload = function() {
-            const button = document.getElementById('saveBtn');
-            
-            // Cek apakah status tombol sudah disimpan sebelumnya
-            const savedStatus = localStorage.getItem('buttonStatus');
-            
-            if (savedStatus === 'saved') {
-                button.innerHTML = '✔️ Simpan';
-                button.classList.add('checked');
-            } else {
-                button.innerHTML = 'Simpan';
-            }
-        }
-    </script>
-
-        <!-- Gambar Imut -->
-        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute Cat" class="cute-image">
-
-        <section class="table-container">
-            <table class="absen-table">
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <!-- Tabel sampai Juz 30 -->
-                        <th>Juz 1</th>
-                        <th>Juz 2</th>
-                        <th>Juz 3</th>
-                        <th>Juz 4</th>
-                        <th>Juz 5</th>
-                        <th>Juz 6</th>
-                        <th>Juz 7</th>
-                        <th>Juz 8</th>
-                        <th>Juz 9</th>
-                        <th>Juz 10</th>
-                        <th>Juz 11</th>
-                        <th>Juz 12</th>
-                        <th>Juz 13</th>
-                        <th>Juz 14</th>
-                        <th>Juz 15</th>
-                        <th>Juz 16</th>
-                        <th>Juz 17</th>
-                        <th>Juz 18</th>
-                        <th>Juz 19</th>
-                        <th>Juz 20</th>
-                        <th>Juz 21</th>
-                        <th>Juz 22</th>
-                        <th>Juz 23</th>
-                        <th>Juz 24</th>
-                        <th>Juz 25</th>
-                        <th>Juz 26</th>
-                        <th>Juz 27</th>
-                        <th>Juz 28</th>
-                        <th>Juz 29</th>
-                        <th>Juz 30</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Data untuk Lala -->
-                    <tr>
-                        <td class="clickable" onclick="animateHeart(this)">Lala</td>
-                        <!-- Checkbox untuk setiap juz -->
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <!-- Data untuk Valenskuy -->
-                    <tr>
-                        <td class="clickable" onclick="animateHeart(this)">Valenskuy</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <!-- Data untuk Firskuy -->
-                    <tr>
-                        <td class="clickable" onclick="animateHeart(this)">Firskuy</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <!-- Data untuk SadidGTG -->
-                    <tr>
-                        <td class="clickable" onclick="animateHeart(this)">SadidGTG</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <!-- Data untuk Rizqi -->
-                    <tr>
-                        <td class="clickable" onclick="animateHeart(this)">Rizqi</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <button class="save-button" onclick="saveData()">Simpan</button>
-    </div>
-
-    <div class="cat-animation">
-        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute Cat" width="100" />
+    <!-- Gambar Kucing -->
+    <div class="kucing">
+        <img src="https://placekitten.com/100/100" alt="Kucing Lucu">
     </div>
 
     <script>
-        // Fungsi untuk animasi love saat nama diklik
-        function animateHeart(element) {
-            element.classList.add('heart-animation');
-            setTimeout(() => {
-                element.classList.remove('heart-animation');
-            }, 1000); // Durasi animasi love
-        }
-
-        // Fungsi Simpan untuk tombol simpan (JavaScript)
-        function saveData() {
-            alert('Data berhasil disimpan!');
-            // Anda bisa menambahkan penyimpanan lebih lanjut seperti localStorage atau pengiriman ke server.
+        // Fungsi untuk toggle checkbox
+        function toggleCheck(juz, nama) {
+            const cell = document.getElementById(nama + '-cell-' + juz);
+            cell.classList.toggle('checked');
         }
     </script>
 </body>
