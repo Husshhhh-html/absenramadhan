@@ -245,14 +245,14 @@ button:hover {
           button.appendChild(loveElement);
 
           // Ubah teks tombol menjadi centang dan beri animasi
-          button.innerHTML = '✔️ Simpan';
+          button.innerHTML = '';
           button.classList.add('checked');
           
           // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
           setTimeout(() => {
             loveElement.remove();  // Menghapus emoji love
             button.classList.remove('checked');  // Menghapus animasi centang
-            button.innerHTML = 'Simpan';  // Mengembalikan teks tombol
+            button.innerHTML = '';  // Mengembalikan teks tombol
           }, 1500); // Durasi animasi (1,5 detik)
         }
     </script>
