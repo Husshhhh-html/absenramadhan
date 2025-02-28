@@ -234,33 +234,63 @@ button:hover {
     <script>
         // Fungsi untuk menangani klik pada tombol Simpan
         function saveAbsence() {
-          const button = document.getElementById('saveBtn');
-          
-          // Menambahkan animasi love
-          const loveElement = document.createElement('span');
-          loveElement.classList.add('love');
-          loveElement.textContent = '❤️'; // Emoji love
-          
-          // Menambahkan love ke dalam tombol
-          button.appendChild(loveElement);
+            const button = document.getElementById('saveBtn');
+            
+            // Cek apakah status tombol sudah disimpan sebelumnya
+            const savedStatus = localStorage.getItem('buttonStatus');
+            
+            if (savedStatus === 'saved') {
+                // Jika tombol sudah disimpan, tampilkan centang dan simpan animasi
+                button.innerHTML = '✔️ Simpan';
+                button.classList.add('checked');
+            } else {
+                // Menambahkan animasi love
+                const loveElement = document.createElement('span');
+                loveElement.classList.add('love');
+                loveElement.textContent = '❤️'; // Emoji love
+                
+                // Menambahkan love ke dalam tombol
+                button.appendChild(loveElement);
 
-          // Ubah teks tombol menjadi centang dan beri animasi
-          button.innerHTML = '';
-          button.classList.add('checked');
-          
-          // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
-          setTimeout(() => {
-            loveElement.remove();  // Menghapus emoji love
-            button.classList.remove('checked');  // Menghapus animasi centang
-            button.innerHTML = '';  // Mengembalikan teks tombol
-          }, 1500); // Durasi animasi (1,5 detik)
+                // Menambahkan centang tanpa menghapus love
+                const checkMark = document.createElement('span');
+                checkMark.textContent = '✔️'; // Centang
+
+                // Ubah tombol menjadi centang dan beri animasi
+                button.innerHTML = '';  // Hapus isi sebelumnya
+                button.appendChild(checkMark);  // Menambahkan centang ke tombol
+                button.classList.add('checked');  // Menambahkan class untuk animasi centang
+                
+                // Menambahkan love kembali ke dalam tombol setelah centang
+                button.appendChild(loveElement); // Menambahkan kembali love ke tombol
+
+                // Simpan status tombol sebagai "saved"
+                localStorage.setItem('buttonStatus', 'saved');
+
+                // Menghilangkan love dan kembalikan teks tombol setelah animasi selesai
+                setTimeout(() => {
+                    button.classList.remove('checked');  // Menghapus animasi centang
+                    button.innerHTML = '';  // Menghapus centang dan love sementara
+                    button.innerHTML = 'Simpan';  // Kembalikan teks tombol ke "Simpan"
+                }, 1500); // Durasi animasi (1,5 detik)
+            }
+        }
+
+        // Cek status tombol saat halaman dimuat
+        window.onload = function() {
+            const button = document.getElementById('saveBtn');
+            
+            // Cek apakah status tombol sudah disimpan sebelumnya
+            const savedStatus = localStorage.getItem('buttonStatus');
+            
+            if (savedStatus === 'saved') {
+                button.innerHTML = '✔️ Simpan';
+                button.classList.add('checked');
+            } else {
+                button.innerHTML = 'Simpan';
+            }
         }
     </script>
-
-
-          <button id="saveBtn" onclick="saveAbsence()">Simpan</button>
-
-    <script src="script.js"></script>
 
         <!-- Gambar Imut -->
         <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute Cat" class="cute-image">
